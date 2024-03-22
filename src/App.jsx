@@ -1,15 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect, useState } from 'react'
 import { ProgressBar } from './ProgressBar'
+import { ThemeToggler } from './ThemeToggler'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
 function App() {
   const [activity, setActivity] = useState(null)
 
-  // useEffect(() => {
-  //   console.log(activity)
-  // }, [activity])
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    getActivity()
+  }, [])
 
   const getActivity = () => {
     fetch('https://www.boredapi.com/api/activity')
@@ -24,14 +27,21 @@ function App() {
 
   return (
     <>
-      <div className="container-md my-5">
+      <div className="container-md mt-5">
 
-        <div className='mb-5'>
+        <div className='mb-4'>
           <h1 className='mt-5'>{activity?.activity || "Title"}</h1>
 
           <p className='fw-lighter fs-2'>{activity?.type}</p>
 
-          <p>Participants: {
+          <div className="position-relative">
+            <div className="position-absolute end-0">
+              <ThemeToggler onThemeChange={setTheme} />
+
+            </div>
+          </div>
+
+          <p>{
             activity && activity.participants > 0 &&
             Array.from({ length: activity.participants }).map((_, index) => (
               <i key={index} className="bi bi-person-fill"></i>
@@ -40,19 +50,19 @@ function App() {
 
           <div className='mb-3'>
             Price
-            <ProgressBar value={activity?.price} />
+            <ProgressBar value={1 - activity?.price} />
           </div>
 
           <div className='mb-3'>
             Accessbility
-            <ProgressBar value={activity?.accessibility} />
+            <ProgressBar value={1 - activity?.accessibility} />
           </div>
 
           <a href={activity?.link}></a>
         </div>
 
         <div className="d-grid">
-          <button onClick={getActivity} className="btn btn-outline-primary">Get Activity</button>
+          <button onClick={getActivity} className={theme === 'dark' ? `btn btn-outline-primary` : `btn btn-primary`}>Get Activity</button>
         </div>
 
       </div>

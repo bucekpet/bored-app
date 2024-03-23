@@ -7,8 +7,8 @@ import './styles.css'
 
 function App() {
   const [activity, setActivity] = useState(null)
+  const [favorites, setFavorites] = useState([])
 
-  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     getActivity()
@@ -23,6 +23,16 @@ function App() {
       .catch(error => {
         window.alert('Error fetching data: ', error)
       })
+  }
+
+  const addToFavorites = () => {
+    if (activity != null) {
+      setFavorites((currentFavorites) => {
+        return [...currentFavorites, activity]
+      })
+    }
+
+    console.log(favorites)
   }
 
   return (
@@ -73,16 +83,31 @@ function App() {
             <a href={activity?.link}></a>
           </div>
 
-          {/* Button */}
-          <div className="d-grid">
-            <button onClick={getActivity} className='btn  btn-dark text-blue-light'>I'm bored!
-              <i className="mx-1 bi bi-emoji-neutral-fill"></i>
-            </button>
+          {/* Buttons */}
+          <div className="row">
+            <div className="col-10">
+              <div className="d-grid">
+                <button onClick={getActivity} className='btn  btn-dark text-blue-light'>I'm bored!
+                  <i className="mx-1 bi bi-emoji-neutral-fill"></i>
+                </button>
+              </div>
+            </div>
 
+            <div className="col-2 px-0">
+              <button onClick={addToFavorites} className='btn btn-dark text-blue-light'>
+                <i className="bi bi-heart"></i>
+              </button>
+            </div>
+          </div>
+
+          <div className='fixed-bottom d-flex justify-content-center pb-2'>
+            <a href="https://github.com/bucekpet/" target="_blank">
+              <i className="bi bi-github"></i>
+            </a>
           </div>
         </div>
+      </div >
 
-      </div>
     </>
   )
 }

@@ -28,19 +28,24 @@ function App() {
   return (
     <>
       <div className="container-md mt-5">
-
         <div className='mb-4'>
-          <h1 className='mt-5'>{activity?.activity || "Title"}</h1>
 
-          <p className='fw-lighter fs-2'>{activity?.type}</p>
+          {/* Title */}
+          <h1>{activity?.activity}</h1>
+
+
+          {/* Type */}
+          <p className='fw-lighter fs-2 '>{activity?.type}</p>
 
           <div className="position-relative">
             <div className="position-absolute end-0">
               <ThemeToggler onThemeChange={setTheme} />
 
             </div>
+
           </div>
 
+          {/* Participants */}
           <p>{
             activity && activity.participants > 0 &&
             Array.from({ length: activity.participants }).map((_, index) => (
@@ -48,16 +53,19 @@ function App() {
             ))
           }</p>
 
+          {/* Price */}
           <div className='mb-3'>
             Price
             <ProgressBar value={1 - activity?.price} />
           </div>
 
+          {/* Accessibility */}
           <div className='mb-3'>
             Accessbility
             <ProgressBar value={1 - activity?.accessibility} />
           </div>
 
+          {/* Link */}
           <a href={activity?.link}></a>
         </div>
 

@@ -8,7 +8,8 @@ export function ProgressBar({ value }) {
                         ? 'bg-warning'
                         : 'bg-danger'
                     }`}
-                style={{ width: value != 0 ? `${value * 100.0}%` : '10%' }}
+                // Ensure the min is above 0 so its visible
+                style={{ width: value != 0 ? `${value * 100.0}%` : '5%' }}
             ></div>
         </div >
     )

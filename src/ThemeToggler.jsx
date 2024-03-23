@@ -22,8 +22,8 @@ export function ThemeToggler({ onThemeChange }) {
     }
 
     return (
-        <div onClick={toggleTheme} className="form-check form-switch">
-            <input className="form-check-input"
+        <div className="form-check form-switch">
+            <input onClick={toggleTheme} className="form-check-input"
                 defaultChecked={theme === 'dark' ? false : true}
                 type="checkbox"
                 role="switch"

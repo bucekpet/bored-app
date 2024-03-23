@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect, useState } from 'react'
 import { ProgressBar } from './ProgressBar'
-import { ThemeToggler } from './ThemeToggler'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './styles.css'
 
@@ -39,12 +38,12 @@ function App() {
           <div className="row">
             <div className="col">
               {/* Type */}
-              <p className='fw-lighter fs-2 text-blue-dark text-capitalize'>{activity?.type}</p>
+              <p className='fw-lighter fs-3 text-blue-dark text-capitalize'>{activity?.type}</p>
             </div>
 
-            <div className="col">
+            <div className="col pt-1">
               {/* Participants */}
-              <p className='pt-2'>{
+              <p className='pt-1'>{
                 activity && activity.participants > 0 &&
                 Array.from({ length: activity.participants }).map((_, index) => (
                   <i key={index} className="bi bi-person-fill"></i>
@@ -52,10 +51,6 @@ function App() {
               }</p>
             </div>
           </div>
-
-
-
-
 
 
           <div className='mb-4'>
@@ -68,7 +63,7 @@ function App() {
 
               <div className="col">
                 {/* Accessibility */}
-                Accessbility
+                Accessibility
                 <ProgressBar value={1 - activity?.accessibility} />
               </div>
             </div>

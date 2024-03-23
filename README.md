@@ -1,6 +1,8 @@
 # Bored App 😴
 
 Simple react application based on https://www.boredapi.com/
+<br>
+Hosted on https://dont-be-bored.vercel.app/
 
 ---
 

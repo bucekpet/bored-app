@@ -1,3 +1,17 @@
 * {
     font-size: 3vh;
+    overflow: hidden;
+}
+
+.bg-gradient-custom {
+    background: rgb(2, 132, 199);
+    background: linear-gradient(0deg, rgba(2, 132, 199, 1) 0%, rgba(24, 24, 27, 1) 50%, rgba(24, 24, 27, 1) 100%);
+}
+
+.text-blue-light {
+    color: #bce4f7;
+}
+
+.text-blue-dark {
+    color: #0c6b9e;
 }

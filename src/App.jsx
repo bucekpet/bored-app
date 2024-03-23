@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect, useState } from 'react'
 import { ProgressBar } from './ProgressBar'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 import './styles.css'
 
 
@@ -93,11 +94,21 @@ function App() {
               </div>
             </div>
 
-            <div className="col-2 px-0">
+            <div className="col-2 px-0 btn-group">
               <button onClick={addToFavorites} className='btn btn-dark text-blue-light'>
                 <i className="bi bi-heart"></i>
               </button>
+
+              <button type="button" className="btn btn-dark dropdown-toggle dropdown-toggle-split text-blue-light" data-bs-toggle="dropdown" aria-expanded="false" />
+              <span className="visually-hidden">Toggle Dropdown</span>
             </div>
+
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" href="#">Action</a></li>
+              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><a className="dropdown-item" href="#">Something else here</a></li>
+              <li><a className="dropdown-item" href="#">Separated link</a></li>
+            </ul>
           </div>
 
           <div className='fixed-bottom d-flex justify-content-center pb-2'>

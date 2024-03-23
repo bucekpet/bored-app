@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { ProgressBar } from './ProgressBar'
 import { ThemeToggler } from './ThemeToggler'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import './styles.css'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <>
-      <div className="container-md mt-5">
+      <div className="container-sm mt-5 w-l-50">
         <div className='mb-4'>
 
           {/* Title */}
@@ -35,7 +36,7 @@ function App() {
 
 
           {/* Type */}
-          <p className='fw-lighter fs-2 '>{activity?.type}</p>
+          <p className='fw-lighter fs-2'>{activity?.type}</p>
 
           <div className="position-relative">
             <div className="position-absolute end-0">
@@ -69,7 +70,7 @@ function App() {
           <a href={activity?.link}></a>
         </div>
 
-        <div className="d-grid">
+        <div className="d-grid mt-5">
           <button onClick={getActivity} className={theme === 'dark' ? `btn btn-outline-primary` : `btn btn-primary`}>Get Activity</button>
         </div>
 

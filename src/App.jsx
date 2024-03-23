@@ -41,9 +41,9 @@ function App() {
               <p className='fw-lighter fs-3 text-blue-dark text-capitalize'>{activity?.type}</p>
             </div>
 
-            <div className="col pt-1">
+            <div className="col d-flex align-items-center">
               {/* Participants */}
-              <p className='pt-1'>{
+              <p className=''>{
                 activity && activity.participants > 0 &&
                 Array.from({ length: activity.participants }).map((_, index) => (
                   <i key={index} className="bi bi-person-fill"></i>

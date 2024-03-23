@@ -1,7 +1,7 @@
 # Bored App 😴
 
 Simple react application based on https://www.boredapi.com/
-
+Hosted on https://dont-be-bored.vercel.app/
 ---
 
 ## Clone and install dependencies 📦

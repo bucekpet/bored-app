@@ -7,7 +7,7 @@ export function FavoriteItem({ id, activity, type, participants, price, accessib
 
     return (
         <>
-            <li className="list-group-item text-blue-light px-0 py-2">
+            <li className="list-group-item text-blue-light px-0 py-3">
                 <div className="d-flex align-items-center">
 
 

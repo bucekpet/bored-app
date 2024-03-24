@@ -1,7 +1,10 @@
+import { useState } from "react"
 import { ParticipantsIcons } from "./ParticipantsIcons"
 import { ProgressBar } from "./ProgressBar"
 
 export function FavoriteItem({ id, activity, type, participants, price, accessibility, deleteFavorite }) {
+    const [buttonHover, setButtonHover] = useState(false)
+
     return (
         <>
             <li className="list-group-item text-blue-light px-0 py-2">
@@ -43,8 +46,15 @@ export function FavoriteItem({ id, activity, type, participants, price, accessib
                     </div>
 
 
-                    <button onClick={() => deleteFavorite(id)} className="ms-4 btn btn-outline-secondary text-blue-light">
-                        <i className="bi bi-heartbreak-fill"></i>
+                    <button onClick={() => deleteFavorite(id)}
+                        onMouseEnter={() => setButtonHover(true)}
+                        onMouseLeave={() => setButtonHover(false)}
+                        className="ms-4 btn btn-outline-secondary text-blue-light">
+                        {buttonHover && (
+                            <i className="bi bi-heartbreak-fill"></i>
+                        ) || (
+                                <i className="bi bi-heartbreak"></i>
+                            )}
                     </button>
 
                 </div>

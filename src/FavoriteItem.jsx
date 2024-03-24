@@ -45,17 +45,16 @@ export function FavoriteItem({ id, activity, type, participants, price, accessib
 
                     </div>
 
-
-                    <button onClick={() => deleteFavorite(id)}
+                    <span onClick={() => deleteFavorite(id)}
                         onMouseEnter={() => setButtonHover(true)}
                         onMouseLeave={() => setButtonHover(false)}
-                        className="ms-4 btn btn-outline-secondary text-blue-light">
+                        className="btn text-blue-light">
                         {buttonHover && (
                             <i className="bi bi-heartbreak-fill"></i>
                         ) || (
                                 <i className="bi bi-heartbreak"></i>
                             )}
-                    </button>
+                    </span>
 
                 </div>
             </li>

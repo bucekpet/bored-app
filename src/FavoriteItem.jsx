@@ -48,7 +48,7 @@ export function FavoriteItem({ id, activity, type, participants, price, accessib
                     <span onClick={() => deleteFavorite(id)}
                         onMouseEnter={() => setButtonHover(true)}
                         onMouseLeave={() => setButtonHover(false)}
-                        className="btn text-blue-light">
+                        className="btn text-blue-light fs-3">
                         {buttonHover && (
                             <i className="bi bi-heartbreak-fill"></i>
                         ) || (

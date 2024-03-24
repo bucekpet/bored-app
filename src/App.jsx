@@ -140,7 +140,7 @@ function App() {
 
         {/* Footer */}
         <div className='fixed-bottom d-flex justify-content-center py-1'>
-          <a href="https://github.com/bucekpet/" target="_blank">
+          <a href="https://github.com/bucekpet/bored-app" target="_blank">
             <i className="bi fs-3 bi-github p-3"></i>
           </a>
         </div>

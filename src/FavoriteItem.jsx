@@ -10,7 +10,7 @@ export function FavoriteItem({ id, activity, type, participants, price, accessib
 
                     <div className="d-flex flex-column w-100">
 
-                        <span className="fs-5">
+                        <span className="fs-5 fw-bolder">
                             {activity}
                         </span>
 
